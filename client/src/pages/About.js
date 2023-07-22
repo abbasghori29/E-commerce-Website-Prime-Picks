@@ -1,0 +1,10 @@
+import React from 'react'
+import Layout from '../components/layout/layout'
+
+const About = () => {
+  return (
+    <Layout title={"About-Prime Picks"}><h1>About</h1></Layout>
+  )
+}
+
+export default About
