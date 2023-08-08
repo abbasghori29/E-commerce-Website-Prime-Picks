@@ -16,6 +16,7 @@ export default function AdminPrivateRoute(){
         setOk(false);
       }
     };
+    
     if (auth?.token) authCheck();
   }, [auth?.token]);
 

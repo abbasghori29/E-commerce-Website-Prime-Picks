@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
  import { useNavigate,useLocation } from "react-router-dom";
-const Spinner = () => {
+const Spinner = ({path="login"}) => {
 const [count, setCount] = useState(5)
 const navigate = useNavigate()
 const Location = useLocation()
@@ -8,13 +8,13 @@ useEffect (() => {
 const interval = setInterval(() => { setCount((prevValue) => --prevValue );
 }, 1000);
 if(count === 0){
-    navigate('/login',{
+    navigate(`${path}`,{
       state:Location.pathname,  //it will redirect user after require sign in where user was at website
     });
 }
 
 return ()=> clearInterval(interval)
-}, [count,navigate,Location])
+}, [count,navigate,Location,path])
 return (
 
     
